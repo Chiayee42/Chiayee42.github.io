@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>归档: 2023/3 |  抓抓&#39;s Blog</title>
+      <title>ffmpeg常用指令 |  抓抓&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -56,94 +56,169 @@
       
     <main class="content on">
       <section class="outer">
-  
-  
-  <article class="articles">
+  <article
+  id="post-ffmpeg常用指令"
+  class="article article-type-post"
+  itemscope
+  itemprop="blogPost"
+  data-scroll-reveal
+>
+  <div class="article-inner">
     
-    
-    <h1 class="page-type-title">2023/3</h1>
-    
-    
-  
-  
-  
-  
-  
-  
-  <div class="archives-wrap">
-    <div class="archive-year-wrap">
-      <a href="/archives/2023" class="archive-year">2023</a>
+    <header class="article-header">
+       
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  ffmpeg常用指令
+</h1>
+ 
+
+      
+    </header>
+     
+    <div class="article-meta">
+      <a href="/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-date">
+  <time datetime="2023-03-21T18:25:59.000Z" itemprop="datePublished">2023-03-22</time>
+</a>   
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">241</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">1 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
-    <div class="archives">
       
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="archive-article-date">
-  <time datetime="2023-03-21T18:25:59.000Z" itemprop="datePublished">03/22</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"
-    >ffmpeg常用指令</a> 
-</h2>
- 
+    <div class="tocbot"></div>
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/22/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%EF%BC%89-%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D%E7%B1%BB%E6%A0%87%E7%AD%BE/" class="archive-article-date">
-  <time datetime="2023-03-21T18:21:29.000Z" itemprop="datePublished">03/22</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/03/22/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%EF%BC%89-%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D%E7%B1%BB%E6%A0%87%E7%AD%BE/"
-    >用户画像项目（一） 规则匹配类标签</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
-      
-  
-  
-      <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  <time datetime="2023-03-20T12:52:10.000Z" itemprop="datePublished">03/20</time>
-</a>
-       
-<h2 itemprop="name">
-  <a class="archive-article-title" href="/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/"
-    >Hexo写作简单笔记</a> 
-</h2>
- 
 
-    </header>
-    
-    
-  </div>
-</article>
+
+  
+    <div class="article-entry" itemprop="articleBody">
+       
+  <h1 id="ffmpeg常用指令"><a href="#ffmpeg常用指令" class="headerlink" title="ffmpeg常用指令"></a>ffmpeg常用指令</h1><h2 id="ffmpeg参数格式"><a href="#ffmpeg参数格式" class="headerlink" title="ffmpeg参数格式"></a>ffmpeg参数格式</h2><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg \</span><br><span class="line">[全局参数] \</span><br><span class="line">[输入文件参数] \</span><br><span class="line">-i [输入文件] \</span><br><span class="line">[输出文件参数] \</span><br><span class="line">[输出文件]</span><br></pre></td></tr></table></figure>
+<h2 id="剪辑视频"><a href="#剪辑视频" class="headerlink" title="剪辑视频"></a>剪辑视频</h2><hr>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg \</span><br><span class="line">-ss 00:00:30.0 \</span><br><span class="line">-i input.mp4 \</span><br><span class="line">-c copy \</span><br><span class="line">-t 00:01:00.0 \</span><br><span class="line">output.mp4</span><br></pre></td></tr></table></figure>
+<h2 id="i-输入文件-ss-起始时间-t-指定时间长度，默认单位为秒-to-指定结束时间-c-v-视频编码-gt-c-v-copy保持原本编码不变-gt-c-v-h264-nvenc可以使用nvdia硬件编码-拼接音频"><a href="#i-输入文件-ss-起始时间-t-指定时间长度，默认单位为秒-to-指定结束时间-c-v-视频编码-gt-c-v-copy保持原本编码不变-gt-c-v-h264-nvenc可以使用nvdia硬件编码-拼接音频" class="headerlink" title="-i : 输入文件-ss : 起始时间-t : 指定时间长度，默认单位为秒-to : 指定结束时间-c:v : 视频编码&gt; -c:v copy保持原本编码不变&gt; -c:v h264_nvenc可以使用nvdia硬件编码## 拼接音频"></a>-i : 输入文件<br>-ss : 起始时间<br>-t : 指定时间长度，默认单位为秒<br>-to : 指定结束时间<br>-c:v : 视频编码<br>&gt; <code>-c:v copy</code>保持原本编码不变<br>&gt; <code>-c:v h264_nvenc</code>可以使用nvdia硬件编码<br>## 拼接音频</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg \</span><br><span class="line">-f concat \</span><br><span class="line">-safe 0 \</span><br><span class="line">-i list.txt \</span><br><span class="line">-c copy \</span><br><span class="line">output.mp3 </span><br></pre></td></tr></table></figure>
+<h2 id="通过文件列表按顺序拼接，txt文件格式如下-视频转码"><a href="#通过文件列表按顺序拼接，txt文件格式如下-视频转码" class="headerlink" title="通过文件列表按顺序拼接，txt文件格式如下## 视频转码"></a>通过文件列表按顺序拼接，txt文件格式如下<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">file &#x27;filename1&#x27;</span><br><span class="line">file &#x27;filename2&#x27;</span><br><span class="line">file &#x27;filename3&#x27;</span><br><span class="line">file &#x27;filename4&#x27;</span><br><span class="line">file &#x27;filename5&#x27;</span><br></pre></td></tr></table></figure><br>## 视频转码</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ffmpeg \</span><br><span class="line">-i input.mp4 \</span><br><span class="line">-vf scale=1920:1080 \</span><br><span class="line">-c:v h264_nvenc \</span><br><span class="line">-b:v 5500k \</span><br><span class="line">-c:a aac \</span><br><span class="line">-b:a 128k \</span><br><span class="line">-output.mp4</span><br></pre></td></tr></table></figure>
+<p>如果编码方式不支持硬件编码，则修改<code>-c:v</code>参数<br>-b:v : 视频码率，一般6000足够清晰<br>-c:a : 音频编码<br>-b:a : 音频码率  </p>
+ 
+      <!-- reward -->
       
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
-  </div>
-  
-  
+    
 
+    <!-- copyright -->
+    
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
+    </div>
+    
+    <footer class="article-footer">
+       
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
+</div>
+
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chiayee.gitee.io/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2023/03/22/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%EF%BC%89-%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D%E7%B1%BB%E6%A0%87%E7%AD%BE/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">用户画像项目（一） 规则匹配类标签</div>
+      </a>
+    
+  </nav>
+
+   
+ 
+   
   
+   
+    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
+    <div id="twikoo" class="twikoo"></div>
+    <script>
+        twikoo.init({
+            envId: ""
+        })
+    </script>
+ 
+</article>
+
 </section>
       <footer class="footer">
   <div class="outer">
@@ -284,6 +359,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
