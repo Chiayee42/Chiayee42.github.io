@@ -3,18 +3,18 @@
   <title>抓抓&#39;s Blog</title>
   
   
-  <link href="https://chiayee42.github.io/atom.xml" rel="self"/>
+  <link href="https://chiayee.gitee.io/personal-blog/atom.xml" rel="self"/>
   
-  <link href="https://chiayee42.github.io/"/>
+  <link href="https://chiayee.gitee.io/personal-blog/"/>
   <updated>2023-03-20T12:54:41.257Z</updated>
-  <id>https://chiayee42.github.io/</id>
+  <id>https://chiayee.gitee.io/personal-blog/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Hexo写作简单笔记</title>
-    <link href="https://chiayee42.github.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/"/>
-    <id>https://chiayee42.github.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://chiayee.gitee.io/personal-blog/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/"/>
+    <id>https://chiayee.gitee.io/personal-blog/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/</id>
     <published>2023-03-20T12:52:10.000Z</published>
     <updated>2023-03-20T12:54:41.257Z</updated>
     
@@ -30,7 +30,7 @@
     
     
     
-    <category term="Hexo" scheme="https://chiayee42.github.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://chiayee.gitee.io/personal-blog/tags/Hexo/"/>
     
   </entry>
   
