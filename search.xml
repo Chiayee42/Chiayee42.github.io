@@ -43,5 +43,12 @@
 <h2 id="通过文件列表按顺序拼接，txt文件格式如下-视频转码"><a href="#通过文件列表按顺序拼接，txt文件格式如下-视频转码" class="headerlink" title="通过文件列表按顺序拼接，txt文件格式如下## 视频转码"></a>通过文件列表按顺序拼接，txt文件格式如下<br><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">file &#x27;filename1&#x27;</span><br><span class="line">file &#x27;filename2&#x27;</span><br><span class="line">file &#x27;filename3&#x27;</span><br><span class="line">file &#x27;filename4&#x27;</span><br><span class="line">file &#x27;filename5&#x27;</span><br></pre></td></tr></table></figure><br>## 视频转码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ffmpeg \</span><br><span class="line">-i input.mp4 \</span><br><span class="line">-vf scale=1920:1080 \</span><br><span class="line">-c:v h264_nvenc \</span><br><span class="line">-b:v 5500k \</span><br><span class="line">-c:a aac \</span><br><span class="line">-b:a 128k \</span><br><span class="line">-output.mp4</span><br></pre></td></tr></table></figure>
 <p>如果编码方式不支持硬件编码，则修改<code>-c:v</code>参数<br>-b:v : 视频码率，一般6000足够清晰<br>-c:a : 音频编码<br>-b:a : 音频码率  </p>
 ]]></content>
+      <categories>
+        <category>ffmpeg</category>
+      </categories>
+      <tags>
+        <tag>ffmpeg</tag>
+        <tag>剪辑</tag>
+      </tags>
   </entry>
 </search>
