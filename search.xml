@@ -58,4 +58,33 @@
         <tag>剪辑</tag>
       </tags>
   </entry>
+  <entry>
+    <title>通过SSH远程端口转发，实现外网访问内网主机</title>
+    <url>/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/</url>
+    <content><![CDATA[<h1 id="通过SSH远程端口转发，实现外网访问内网主机"><a href="#通过SSH远程端口转发，实现外网访问内网主机" class="headerlink" title="通过SSH远程端口转发，实现外网访问内网主机"></a>通过SSH远程端口转发，实现外网访问内网主机</h1><h2 id="一、使用场景"><a href="#一、使用场景" class="headerlink" title="一、使用场景"></a>一、使用场景</h2><p>校园网可以连接到校外网络，而校外无法访问校园网内的主机。为了解决这个问题，本文介绍一个基于SSH远程端口转发的方法，通过一个有公网ip的服务器B，在服务器B和校内主机A之间建立一个隧道，从而实现校外访问</p>
+<p>校内主机：A<br>服务器：B<br>校外电脑：C </p>
+<h2 id="二、SSH命令"><a href="#二、SSH命令" class="headerlink" title="二、SSH命令"></a>二、SSH命令</h2><p>在校内主机上输入如下命令</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -NfR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br></pre></td></tr></table></figure>
+<p>其中<code>enter.B.ip.address</code>为服务器ip，这样就在服务器的8822端口和校内主机的22端口之间建立了隧道。然后就可以通过<code>ssh user@enter.B.ip.address</code>访问校内主机A了</p>
+<h2 id="三、配置秘钥"><a href="#三、配置秘钥" class="headerlink" title="三、配置秘钥"></a>三、配置秘钥</h2><p>第二步之后就能正常使用了，不过需要输入密码，配置秘钥之后就可以无需密码建立隧道，并且，如果要通过systemd守护进程开机自启的话，也需要配置好秘钥才行  </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+
+<p>执行此命令之后，默认会在<code>~/.ssh/</code>目录下生成公钥和私钥，然后通过如下指令，将公钥复制到服务器上</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-copy-id ubuntu@enter.B.ip.address</span><br></pre></td></tr></table></figure>
+<p>然后就能不用密码建立隧道了</p>
+<h2 id="四、设置开机自启"><a href="#四、设置开机自启" class="headerlink" title="四、设置开机自启"></a>四、设置开机自启</h2><p>创建一个<code>ssh-port-forward.service</code>文件，输入以下内容，并移动到<code>/lib/systemd/system/</code>下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SSH port forward for to jump server&#x27;s port 8822. 8822 is already mapped to public network. As a result, we can use this command to SSH login to this server: ssh -NfR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br><span class="line">After=sshd.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=jia</span><br><span class="line">Group=jia</span><br><span class="line">ExecStart=/usr/bin/ssh -NR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">Alias=ssh-port-forward.service</span><br></pre></td></tr></table></figure>
+<p>记得把里面的ip地址修改成服务器的ip，<code>[Service]</code>当中的<code>User</code>和<code>Group</code>修改成校园网主机的用户名</p>
+<h2 id="五、通过scp传输文件"><a href="#五、通过scp传输文件" class="headerlink" title="五、通过scp传输文件"></a>五、通过scp传输文件</h2><p>以传输文件<code>music.mp3</code>为例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">scp -P 8822 ./music.mp3 jia@enter.B.ip.address</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
 </search>
