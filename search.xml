@@ -160,11 +160,8 @@
 <td>Authorization</td>
 <td>Basic dGVzdHVzZXI6ZmFrZXBhc3N3b3Jk</td>
 </tr>
-<tr>
-<td>value通过以下代码生成</td>
-<td></td>
-</tr>
 </tbody></table>
+<p>value通过以下代码生成</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">echo &quot;Basic $(echo -n &#x27;testuser:fakepassword&#x27; | base64)&quot;</span><br></pre></td></tr></table></figure>
 
 <h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol>
