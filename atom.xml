@@ -3,18 +3,18 @@
   <title>抓抓&#39;s Blog</title>
   
   
-  <link href="https://chiayee.gitee.io/atom.xml" rel="self"/>
+  <link href="https://chiayee42.github.io/atom.xml" rel="self"/>
   
-  <link href="https://chiayee.gitee.io/"/>
+  <link href="https://chiayee42.github.io/"/>
   <updated>2023-04-18T14:04:39.044Z</updated>
-  <id>https://chiayee.gitee.io/</id>
+  <id>https://chiayee42.github.io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
     <title>Linux很多常用指令都失效的原因和解决方法</title>
-    <link href="https://chiayee.gitee.io/2023/04/18/Linux%E5%BE%88%E5%A4%9A%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%83%BD%E5%A4%B1%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>https://chiayee.gitee.io/2023/04/18/Linux%E5%BE%88%E5%A4%9A%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%83%BD%E5%A4%B1%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <link href="https://chiayee42.github.io/2023/04/18/Linux%E5%BE%88%E5%A4%9A%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%83%BD%E5%A4%B1%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://chiayee42.github.io/2023/04/18/Linux%E5%BE%88%E5%A4%9A%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%83%BD%E5%A4%B1%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
     <published>2023-04-18T12:54:21.000Z</published>
     <updated>2023-04-18T14:04:39.044Z</updated>
     
@@ -30,19 +30,19 @@
     
     
     
-    <category term="linux" scheme="https://chiayee.gitee.io/categories/linux/"/>
+    <category term="linux" scheme="https://chiayee42.github.io/categories/linux/"/>
     
     
-    <category term="linux" scheme="https://chiayee.gitee.io/tags/linux/"/>
+    <category term="linux" scheme="https://chiayee42.github.io/tags/linux/"/>
     
-    <category term="环境变量" scheme="https://chiayee.gitee.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
+    <category term="环境变量" scheme="https://chiayee42.github.io/tags/%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F/"/>
     
   </entry>
   
   <entry>
     <title>通过SSH远程端口转发，实现外网访问内网主机</title>
-    <link href="https://chiayee.gitee.io/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/"/>
-    <id>https://chiayee.gitee.io/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/</id>
+    <link href="https://chiayee42.github.io/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/"/>
+    <id>https://chiayee42.github.io/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/</id>
     <published>2023-04-07T08:09:26.000Z</published>
     <updated>2023-04-18T14:03:37.689Z</updated>
     
@@ -57,19 +57,19 @@
     
     
     
-    <category term="linux" scheme="https://chiayee.gitee.io/categories/linux/"/>
+    <category term="linux" scheme="https://chiayee42.github.io/categories/linux/"/>
     
     
-    <category term="linux" scheme="https://chiayee.gitee.io/tags/linux/"/>
+    <category term="linux" scheme="https://chiayee42.github.io/tags/linux/"/>
     
-    <category term="ssh" scheme="https://chiayee.gitee.io/tags/ssh/"/>
+    <category term="ssh" scheme="https://chiayee42.github.io/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>ffmpeg常用指令</title>
-    <link href="https://chiayee.gitee.io/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>https://chiayee.gitee.io/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
+    <link href="https://chiayee42.github.io/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
+    <id>https://chiayee42.github.io/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
     <published>2023-03-21T18:25:59.000Z</published>
     <updated>2023-04-18T14:02:13.701Z</updated>
     
@@ -84,49 +84,19 @@
     
     
     
-    <category term="ffmpeg" scheme="https://chiayee.gitee.io/categories/ffmpeg/"/>
+    <category term="ffmpeg" scheme="https://chiayee42.github.io/categories/ffmpeg/"/>
     
     
-    <category term="ffmpeg" scheme="https://chiayee.gitee.io/tags/ffmpeg/"/>
+    <category term="ffmpeg" scheme="https://chiayee42.github.io/tags/ffmpeg/"/>
     
-    <category term="剪辑" scheme="https://chiayee.gitee.io/tags/%E5%89%AA%E8%BE%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>用户画像项目（一） 规则匹配类标签</title>
-    <link href="https://chiayee.gitee.io/2023/03/22/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%EF%BC%89-%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D%E7%B1%BB%E6%A0%87%E7%AD%BE/"/>
-    <id>https://chiayee.gitee.io/2023/03/22/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E9%A1%B9%E7%9B%AE%EF%BC%88%E4%B8%80%EF%BC%89-%E8%A7%84%E5%88%99%E5%8C%B9%E9%85%8D%E7%B1%BB%E6%A0%87%E7%AD%BE/</id>
-    <published>2023-03-21T18:21:29.000Z</published>
-    <updated>2023-04-18T14:03:18.798Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;创建标签&quot;&gt;&lt;a href=&quot;#创建标签&quot; class=&quot;headerlink&quot; title=&quot;创建标签&quot;&gt;&lt;/a&gt;创建标签&lt;/h1&gt;&lt;p&gt;按照如下形式创建&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td</summary>
-        
-      
-    
-    
-    
-    <category term="用户画像" scheme="https://chiayee.gitee.io/categories/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/"/>
-    
-    
-    <category term="用户画像" scheme="https://chiayee.gitee.io/tags/%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F/"/>
-    
-    <category term="大数据" scheme="https://chiayee.gitee.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-    <category term="标签开发" scheme="https://chiayee.gitee.io/tags/%E6%A0%87%E7%AD%BE%E5%BC%80%E5%8F%91/"/>
+    <category term="剪辑" scheme="https://chiayee42.github.io/tags/%E5%89%AA%E8%BE%91/"/>
     
   </entry>
   
   <entry>
     <title>Hexo写作简单笔记</title>
-    <link href="https://chiayee.gitee.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/"/>
-    <id>https://chiayee.gitee.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/</id>
+    <link href="https://chiayee42.github.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/"/>
+    <id>https://chiayee42.github.io/2023/03/20/Hexo%E5%86%99%E4%BD%9C%E7%AE%80%E5%8D%95%E7%AC%94%E8%AE%B0/</id>
     <published>2023-03-20T12:52:10.000Z</published>
     <updated>2023-04-18T14:02:38.779Z</updated>
     
@@ -142,7 +112,7 @@
     
     
     
-    <category term="Hexo" scheme="https://chiayee.gitee.io/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://chiayee42.github.io/tags/Hexo/"/>
     
   </entry>
   
