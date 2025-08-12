@@ -171,5 +171,8 @@
 <li>订阅的频道提示正在重新连接<br> ntfy app设置链接协议为websocket</li>
 </ol>
 ]]></content>
+      <tags>
+        <tag>ntfy</tag>
+      </tags>
   </entry>
 </search>
