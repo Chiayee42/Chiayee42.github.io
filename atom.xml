@@ -6,10 +6,32 @@
   <link href="https://chiayee42.github.io/atom.xml" rel="self"/>
   
   <link href="https://chiayee42.github.io/"/>
-  <updated>2023-04-18T14:04:39.044Z</updated>
+  <updated>2025-08-12T16:25:12.107Z</updated>
   <id>https://chiayee42.github.io/</id>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ntfy推送服务器部署（包含访问控制）</title>
+    <link href="https://chiayee42.github.io/2025/08/13/ntfy%E6%8E%A8%E9%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%EF%BC%88%E5%8C%85%E5%90%AB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%89/"/>
+    <id>https://chiayee42.github.io/2025/08/13/ntfy%E6%8E%A8%E9%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%EF%BC%88%E5%8C%85%E5%90%AB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%89/</id>
+    <published>2025-08-12T16:24:13.000Z</published>
+    <updated>2025-08-12T16:25:12.107Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考链接：&lt;a href=&quot;https://docs.ntfy.sh/config/#quick-start&quot;&gt;ntfy官网&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-新建docker-compose-yml&quot;&gt;&lt;a href=&quot;#1-新建docker-compose-yml&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Linux很多常用指令都失效的原因和解决方法</title>
