@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>通过SSH远程端口转发，实现外网访问内网主机 |  抓抓&#39;s Blog</title>
+      <title>ntfy推送服务器部署（包含访问控制） |  抓抓&#39;s Blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,8 +57,8 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-通过SSH远程端口转发，实现外网访问内网主机"
-  class="article article-type-post"
+  id="page-"
+  class="article article-type-page"
   itemscope
   itemprop="blogPost"
   data-scroll-reveal
@@ -68,67 +68,55 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  通过SSH远程端口转发，实现外网访问内网主机
+  ntfy推送服务器部署（包含访问控制）
 </h1>
  
 
       
     </header>
-     
-    <div class="article-meta">
-      <a href="/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/" class="article-date">
-  <time datetime="2023-04-07T08:09:26.000Z" itemprop="datePublished">2023-04-07</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-  
-<div class="word_count">
-    <span class="post-time">
-        <span class="post-meta-item-icon">
-            <i class="ri-quill-pen-line"></i>
-            <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">487</span>
-        </span>
-    </span>
-
-    <span class="post-time">
-        &nbsp; | &nbsp;
-        <span class="post-meta-item-icon">
-            <i class="ri-book-open-line"></i>
-            <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">2 分钟</span>
-        </span>
-    </span>
-</div>
- 
-    </div>
-      
-    <div class="tocbot"></div>
-
-
-
-
-  
+       
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="一、使用场景"><a href="#一、使用场景" class="headerlink" title="一、使用场景"></a>一、使用场景</h1><p>校园网可以连接到校外网络，而校外无法访问校园网内的主机。为了解决这个问题，本文介绍一个基于SSH远程端口转发的方法，通过一个有公网ip的服务器B，在服务器B和校内主机A之间建立一个隧道，从而实现校外访问</p>
-<p>校内主机：A<br>服务器：B<br>校外电脑：C </p>
-<h1 id="二、SSH命令"><a href="#二、SSH命令" class="headerlink" title="二、SSH命令"></a>二、SSH命令</h1><p>在校内主机上输入如下命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -NfR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br></pre></td></tr></table></figure>
-<p>其中<code>enter.B.ip.address</code>为服务器ip，这样就在服务器的8822端口和校内主机的22端口之间建立了隧道。然后就可以通过<code>ssh user@enter.B.ip.address</code>访问校内主机A了</p>
-<h1 id="三、配置秘钥"><a href="#三、配置秘钥" class="headerlink" title="三、配置秘钥"></a>三、配置秘钥</h1><p>第二步之后就能正常使用了，不过需要输入密码，配置秘钥之后就可以无需密码建立隧道，并且，如果要通过systemd守护进程开机自启的话，也需要配置好秘钥才行  </p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+  <p>参考链接：<a target="_blank" rel="noopener" href="https://docs.ntfy.sh/config/#quick-start">ntfy官网</a></p>
+<h2 id="1-新建docker-compose-yml"><a href="#1-新建docker-compose-yml" class="headerlink" title="1. 新建docker-compose.yml"></a>1. 新建docker-compose.yml</h2><p>请先确保服务器上安装了docker以及docker-compose</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">services:</span><br><span class="line">  ntfy:</span><br><span class="line">    image: yy25mnosrnxzx6.xuanyuan.run/binwiederhier/ntfy</span><br><span class="line">    restart: unless-stopped</span><br><span class="line">    environment:</span><br><span class="line">      NTFY_BASE_URL: http://你的ip地址:端口号/</span><br><span class="line">      NTFY_CACHE_FILE: /var/lib/ntfy/cache.db</span><br><span class="line">      NTFY_AUTH_FILE: /var/lib/ntfy/auth.db</span><br><span class="line">      NTFY_AUTH_DEFAULT_ACCESS: deny-all</span><br><span class="line">      NTFY_AUTH_USERS: phil:$$2a$$10$$YLiO8U21sX1uhZamTLJXHuxgVC0Z/GKISibrKCLohPgtG7yIxSk4C:admin&#x27; # Must escape &#x27;$&#x27; as &#x27;$$&#x27;</span><br><span class="line">      NTFY_BEHIND_PROXY: false</span><br><span class="line">      NTFY_ENABLE_WATCH: true    # 启用 watch 功能</span><br><span class="line">      NTFY_ATTACHMENT_CACHE_DIR: /var/lib/ntfy/attachments</span><br><span class="line">      NTFY_ENABLE_LOGIN: true</span><br><span class="line">    volumes:</span><br><span class="line">      - ./:/var/lib/ntfy</span><br><span class="line">    ports:</span><br><span class="line">      - 80:80</span><br><span class="line">    command: serve</span><br></pre></td></tr></table></figure>
 
-<p>执行此命令之后，默认会在<code>~/.ssh/</code>目录下生成公钥和私钥，然后通过如下指令，将公钥复制到服务器上</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id ubuntu@enter.B.ip.address</span><br></pre></td></tr></table></figure>
-<p>然后就能不用密码建立隧道了</p>
-<h1 id="四、设置开机自启"><a href="#四、设置开机自启" class="headerlink" title="四、设置开机自启"></a>四、设置开机自启</h1><p>创建一个<code>ssh-port-forward.service</code>文件，输入以下内容，并移动到<code>/lib/systemd/system/</code>下</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=SSH port forward for to jump server&#x27;s port 8822. 8822 is already mapped to public network. As a result, we can use this command to SSH login to this server: ssh -NfR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br><span class="line">After=sshd.service</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">User=jia</span><br><span class="line">Group=jia</span><br><span class="line">ExecStart=/usr/bin/ssh -NR 8822:localhost:22 ubuntu@enter.B.ip.address</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line">Alias=ssh-port-forward.service</span><br></pre></td></tr></table></figure>
-<p>记得把里面的ip地址修改成服务器的ip，<code>[Service]</code>当中的<code>User</code>和<code>Group</code>修改成校园网主机的用户名</p>
-<h1 id="五、通过scp传输文件"><a href="#五、通过scp传输文件" class="headerlink" title="五、通过scp传输文件"></a>五、通过scp传输文件</h1><p>以传输文件<code>music.mp3</code>为例</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -P 8822 ./music.mp3 jia@enter.B.ip.address</span><br></pre></td></tr></table></figure>
+<p>其中</p>
+<ul>
+<li>NTFY_BASE_URL：填你的服务器和端口号</li>
+<li>NTFY_AUTH_USERS：用<a target="_blank" rel="noopener" href="https://bcrypt-generator.com/">在线 bcrypt 生成器</a>生成，同时，要转义$，把$替换成$$</li>
+<li>ports：左侧和NTFY_BASE_URL的端口号一致</li>
+</ul>
+<h2 id="2-运行docker"><a href="#2-运行docker" class="headerlink" title="2. 运行docker"></a>2. 运行docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker-compose up -d</span><br></pre></td></tr></table></figure>
 
+<h2 id="3-手机端设置"><a href="#3-手机端设置" class="headerlink" title="3. 手机端设置"></a>3. 手机端设置</h2><ul>
+<li>添加订阅</li>
+<li>设置-管理用户-添加新用户</li>
+</ul>
+<h2 id="4-推送"><a href="#4-推送" class="headerlink" title="4. 推送"></a>4. 推送</h2><p><a target="_blank" rel="noopener" href="https://docs.ntfy.sh/publish/?h=access#authentication">push接口使用说明</a></p>
+<h3 id="通过控制台推送"><a href="#通过控制台推送" class="headerlink" title="通过控制台推送"></a>通过控制台推送</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl \ </span><br><span class="line">-u testuser:fakepassword \ </span><br><span class="line">-d &quot;Look ma, with auth&quot; \ </span><br><span class="line">https://ntfy.example.com/mysecrets</span><br></pre></td></tr></table></figure>
+<h3 id="通过HTTP-POST接口"><a href="#通过HTTP-POST接口" class="headerlink" title="通过HTTP POST接口"></a>通过HTTP POST接口</h3><p>需要配置Header</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Authorization</td>
+<td>Basic dGVzdHVzZXI6ZmFrZXBhc3N3b3Jk</td>
+</tr>
+<tr>
+<td>value通过以下代码生成</td>
+<td></td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;Basic $(echo -n &#x27;testuser:fakepassword&#x27; | base64)&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><ol>
+<li>订阅的频道提示正在重新连接<br> ntfy app设置链接协议为websocket</li>
+</ol>
  
       <!-- reward -->
       
@@ -199,49 +187,19 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chiayee.gitee.io/2023/04/07/%E9%80%9A%E8%BF%87SSH%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8C%E5%AE%9E%E7%8E%B0%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://chiayee.gitee.io/ntfy%E6%8E%A8%E9%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%EF%BC%88%E5%8C%85%E5%90%AB%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%EF%BC%89/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/" rel="tag">ssh</a></li></ul>
-
     </footer>
   </div>
 
    
-  <nav class="article-nav">
-    
-      <a href="/2023/04/18/Linux%E5%BE%88%E5%A4%9A%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%E9%83%BD%E5%A4%B1%E6%95%88%E7%9A%84%E5%8E%9F%E5%9B%A0%E5%92%8C%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Linux很多常用指令都失效的原因和解决方法
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2023/03/22/ffmpeg%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" class="article-nav-link">
-        <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">ffmpeg常用指令</div>
-      </a>
-    
-  </nav>
-
    
  
    
   
-   
-    <script src="https://cdn.staticfile.org/twikoo/1.4.18/twikoo.all.min.js"></script>
-    <div id="twikoo" class="twikoo"></div>
-    <script>
-        twikoo.init({
-            envId: ""
-        })
-    </script>
- 
 </article>
 
 </section>
@@ -384,22 +342,6 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
- 
-<script src="/js/tocbot.min.js"></script>
-
-<script>
-  tocbot.init({
-    tocSelector: ".tocbot",
-    contentSelector: ".article-entry",
-    headingSelector: "h1, h2, h3, h4, h5, h6",
-    hasInnerContainers: true,
-    scrollSmooth: true,
-    scrollContainer: "main",
-    positionFixedSelector: ".tocbot",
-    positionFixedClass: "is-position-fixed",
-    fixedSidebarOffset: "auto",
-  });
-</script>
 
 <script src="https://cdn.staticfile.org/jquery-modal/0.9.2/jquery.modal.min.js"></script>
 <link
